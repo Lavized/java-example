@@ -6,7 +6,13 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriverService;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.io.File;
+
 import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
 
 public class TestLaunch {
@@ -17,6 +23,10 @@ public class TestLaunch {
     @Before
     public void start(){
         driver = ConnectToWebDriver.getWebDriver();
+       /* driver = new ChromeDriver(new ChromeDriverService.Builder()
+                                        .usingDriverExecutable(new File(
+                                                "D:\\dima\\tech\\idea_projects\\java-example\\src\\test\\resources\\drivers\\chromedriver.exe"))
+                .build());*/
         wait = new WebDriverWait(driver,10);
 
     }
